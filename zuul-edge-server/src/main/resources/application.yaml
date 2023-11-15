@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: zuul-edge-server
+  profiles:
+    active: localhost
+  main:
+    web-application-type: reactive
+  cloud:
+    gateway:
+      routes:
+        - id: employee-service
+          uri: lb://employee-service/
+          predicates:
+            - Path=/api/v1/employee/**
+        - id: employee-cache-service
+          uri: lb://employee-cache-service/
+          predicates:
+            - Path=/api/v1/employee-cache/**
+
+
+info:
+  component: Zuul Edge Server
+
+server:
+  port: 8762
+
+---
+spring:
+  config:
+    activate:
+      on-profile: localhost
+
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
+  instance:
+    instance-id: ${spring.application.name}:${random.uuid}
+    prefer-ip-address: true
