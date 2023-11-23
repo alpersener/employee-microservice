@@ -13,12 +13,16 @@
         <module name="employee-service" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="jwt" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="employee-cache-service" options="-parameters" />
       <module name="employee-service" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
+      <module name="jwt" options="-parameters" />
       <module name="zuul-edge-server" options="-parameters" />
     </option>
   </component>
