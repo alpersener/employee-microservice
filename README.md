@@ -4,6 +4,7 @@
 ## Features
 - Lombok
 - Openfeign
+- JWT
 - Redis cache
 - Eureka Server/Client
 - PostgreSQL
