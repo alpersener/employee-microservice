@@ -25,6 +25,45 @@ FriendlyMessageCodeImpl__EMPLOYEE_NOT_CREATED_EXCEPTION=Çalışan oluşturulama
   
 ## Endpoints (/api/v1/employee)
 - These endpoints are not best practices!
+- To receive a response from the employee service, we need to send requests to the register and auth endpoints first. Additionally, in the request bodies, the email and pw must be the same otherwise, we cannot authorize
+ ### POST (Register And Authenticate)
+Example request endpoint
+```
+/api/v1/auth/register
+/api/v1/auth/authenticate
+```
+Request body(Register):
+```
+{
+    "firstname":"string",
+    "lastname":"string",
+    "role":"role",
+    "email":"string",
+    "password":"string"
+
+}
+
+```
+Response:
+```
+token:eyJhb....
+
+```
+
+Request body(Authenticate):
+```
+{
+    "email":"string",
+    "password":"string"
+}
+
+```
+Response:
+```
+token:eyJhb....
+```
+
+* When making requests to employee-service endpoints you should use a Bearer Token to receive a response
 ### GET
 Example request endpoint
 ```
