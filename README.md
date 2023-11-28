@@ -23,7 +23,7 @@ FriendlyMessageCodeImpl__EMPLOYEE_NOT_CREATED_EXCEPTION=Employee not created.
 FriendlyMessageCodeImpl__EMPLOYEE_NOT_CREATED_EXCEPTION=Çalışan oluşturulamadı.
 ```
   
-## Endpoints (/api/v1/employee)
+## Endpoints 
 - These endpoints are not best practices!
 - To receive a response from the employee service, we need to send requests to the register and auth endpoints first. Additionally, in the request bodies, the email and pw must be the same otherwise, we cannot authorize
  ### POST (Register And Authenticate)
@@ -64,7 +64,7 @@ token:eyJhb....
 ```
 
 * When making requests to employee-service endpoints you should use a Bearer Token to receive a response
-### GET
+### GET (/api/v1/employee)
 Example request endpoint
 ```
 /{language}/get/{employeeId}
@@ -90,7 +90,7 @@ Returns:
   "httpStatus": "OK"
 }
 ```
-### POST
+### POST (/api/v1/employee)
 Example request endpoint
 ```
 /{language}/create
@@ -130,7 +130,7 @@ Response body:
   "httpStatus": "CREATED"
 }
 ```
-### PUT
+### PUT (/api/v1/employee)
 Example request endpoint
 ```
 /{language}/update/{employeeId}
@@ -171,7 +171,7 @@ Response Body:
   "httpStatus": "OK"
 }
 ```
-### DELETE
+### DELETE (/api/v1/employee)
 
 Example request endpoint
 ```
